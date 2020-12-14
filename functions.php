@@ -47,7 +47,5 @@ class IcbfFunctions
 }
 
 if (isset($_POST['uid'])) {
-    $module = new IcbfFunctions();
-    $module->uid = $_POST['uid'];
-    $module->queryIcbf();
+    echo $_POST['uid'];
 }
