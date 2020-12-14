@@ -58,7 +58,11 @@
                     console.log(resp);
                     $("#row-resp").html(resp);
                     $("#row-resp").show();
-                }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status);
+                    alert(thrownError);
+                  }
             });
         }
     }
