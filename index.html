@@ -4,7 +4,6 @@
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-
 <div class="row" style="padding-top: 20px;">
     <div class="col-sm-10 col-sm-offset-1">
         <form class="form-horizontal" id="formUpdateModule">
@@ -45,7 +44,7 @@
         if (uid === "") {
             alert("Debe ingresar un número de documento");
         } else {
-            var url = "functions.php";
+            var url = "https://jesmol.github.io/cupos-icbf-sed/functions.php";
             var data = new FormData();
             data.append("uid", uid);
             $.ajax({
