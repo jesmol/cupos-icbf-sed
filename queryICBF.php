@@ -9,7 +9,7 @@ class QueryIcbf extends Connection
         $stmt = Connection::connect()->prepare(""
             . "SELECT * "
             . "FROM main "
-            . "WHERE numeroDocumentoBeneficiario = :uid");
+            . "WHERE numerodocumentobeneficiario = :uid");
         $stmt->bindParam(":uid", $uid, PDO::PARAM_STR);
         $stmt->execute();
         return $stmt->fetch();
