@@ -45,7 +45,7 @@
         if (uid === "") {
             alert("Debe ingresar un número de documento");
         } else {
-            var url = "functions.php";
+            var url = "http://200.29.117.69/functions.php";
             var data = new FormData();
             data.append("uid", uid);
             $.ajax({
