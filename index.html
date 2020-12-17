@@ -1,9 +1,3 @@
-<?php
- if((!empty( $_SERVER['HTTP_X_FORWARDED_HOST'])) || (!empty( $_SERVER['HTTP_X_FORWARDED_FOR'])) ) {
-    $_SERVER['HTTP_HOST'] = $_SERVER['HTTP_X_FORWARDED_HOST'];
-    $_SERVER['HTTPS'] = 'on';
- }
-?>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -47,11 +41,7 @@
         if (uid === "") {
             alert("Debe ingresar un número de documento");
         } else {
-<<<<<<< HEAD:index.php
-            var url = "http://200.29.117.69/functions.php";
-=======
             var url = "http://200.29.117.69/apps/icbf/functions.php";
->>>>>>> 8a5feb46a991501c2e0fc2f6d72bbd8cef1d7805:index.html
             var data = new FormData();
             data.append("uid", uid);
             $.ajax({
@@ -73,4 +63,23 @@
             });
         }
     }
+</script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyA6zH5A99gNJaLq9DEV_YDOuCtNWWrC6OE",
+    authDomain: "cupos-icbf-sed.firebaseapp.com",
+    projectId: "cupos-icbf-sed",
+    storageBucket: "cupos-icbf-sed.appspot.com",
+    messagingSenderId: "154401731713",
+    appId: "1:154401731713:web:900f1093594687cba0c980"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 </script>
