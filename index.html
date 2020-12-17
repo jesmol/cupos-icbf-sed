@@ -1,9 +1,11 @@
-<head>
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-</head>
+<?php
+ if((!empty( $_SERVER['HTTP_X_FORWARDED_HOST'])) || (!empty( $_SERVER['HTTP_X_FORWARDED_FOR'])) ) {
+    $_SERVER['HTTP_HOST'] = $_SERVER['HTTP_X_FORWARDED_HOST'];
+    $_SERVER['HTTPS'] = 'on';
+ }
+?>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 
 <div class="row" style="padding-top: 20px;">
     <div class="col-sm-10 col-sm-offset-1">
@@ -45,7 +47,11 @@
         if (uid === "") {
             alert("Debe ingresar un número de documento");
         } else {
+<<<<<<< HEAD:index.php
             var url = "http://200.29.117.69/functions.php";
+=======
+            var url = "http://200.29.117.69/apps/icbf/functions.php";
+>>>>>>> 8a5feb46a991501c2e0fc2f6d72bbd8cef1d7805:index.html
             var data = new FormData();
             data.append("uid", uid);
             $.ajax({
@@ -59,6 +65,10 @@
                     console.log(resp);
                     $("#row-resp").html(resp);
                     $("#row-resp").show();
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status);
+                    alert(thrownError);
                 }
             });
         }
